@@ -9,28 +9,28 @@ PORT = 8081
 app = Flask(__name__)
 
 def fetch_current_weather(city):
-    api_key = "942ede6e8b41006a9e425153a47f42b5"
+    api_key = "YOUR_API_KEY"
     url = f"http://api.openweathermap.org/data/2.5/weather?q={city}&appid={api_key}&units=metric"
     response = requests.get(url)
     data = response.json()
     return data
 
 def fetch_current_weather_by_coordinates(lat, lon):
-    api_key = "942ede6e8b41006a9e425153a47f42b5"
+    api_key = "YOUR_API_KEY"
     url = f"http://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={api_key}&units=metric"
     response = requests.get(url)
     data = response.json()
     return data
 
 def fetch_forecast_weather(city):
-    api_key = "942ede6e8b41006a9e425153a47f42b5"
+    api_key = "YOUR_API_KEY"
     url = f"http://api.openweathermap.org/data/2.5/forecast?q={city}&appid={api_key}&units=metric"
     response = requests.get(url)
     data = response.json()
     return data
 
 def fetch_forecast_weather_by_coordinates(lat, lon):
-    api_key = "942ede6e8b41006a9e425153a47f42b5"
+    api_key = "YOUR_API_KEY"
     url = f"http://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={api_key}&units=metric"
     response = requests.get(url)
     data = response.json()

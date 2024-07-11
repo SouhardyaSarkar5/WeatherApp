@@ -370,28 +370,28 @@ HTML_TEMPLATE = """
 </html>
 """
 def fetch_current_weather(city):
-    api_key = "942ede6e8b41006a9e425153a47f42b5"
+    api_key = "YOUR_API_KEY"
     url = f"http://api.openweathermap.org/data/2.5/weather?q={city}&appid={api_key}&units=metric"
     response = requests.get(url)
     data = response.json()
     return data
 
 def fetch_current_weather_by_coordinates(lat, lon):
-    api_key = "942ede6e8b41006a9e425153a47f42b5"
+    api_key = "YOUR_API_KEY"
     url = f"http://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={api_key}&units=metric"
     response = requests.get(url)
     data = response.json()
     return data
 
 def fetch_forecast_weather(city):
-    api_key = "942ede6e8b41006a9e425153a47f42b5"
+    api_key = "YOUR_API_KEY"
     url = f"http://api.openweathermap.org/data/2.5/forecast?q={city}&appid={api_key}&units=metric"
     response = requests.get(url)
     data = response.json()
     return data
 
 def fetch_forecast_weather_by_coordinates(lat, lon):
-    api_key = "942ede6e8b41006a9e425153a47f42b5"
+    api_key = "YOUR_API_KEY"
     url = f"http://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={api_key}&units=metric"
     response = requests.get(url)
     data = response.json()
@@ -438,7 +438,7 @@ class WeatherAppHandler(http.server.SimpleHTTPRequestHandler):
         elif self.path.startswith("/fetch_weather"):
             query = urllib.parse.urlparse(self.path).query
             params = urllib.parse.parse_qs(query)
-            api_key = "942ede6e8b41006a9e425153a47f42b5"  # Replace with your OpenWeatherMap API key
+            api_key = "YOUR_API_KEY" # Replace with your OpenWeatherMap API key
 
             if 'city' in params:
                 city = params['city'][0]
